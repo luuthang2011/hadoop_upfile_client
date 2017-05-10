@@ -198,13 +198,15 @@ public final class MainUI extends javax.swing.JFrame {
                     int totalByteRead = 0;
                     while (true) {
                         int sizeRead = bis.read(buffer);
-                        totalByteRead += sizeRead;
-                        int valueProgress=(int)(totalByteRead/fileSize*100);
-                        this.progressUpFile.setValue(valueProgress);
-                        System.out.println("progress : "+ valueProgress);
-                        if (sizeRead == -1) {
+                        if (sizeRead < 0 ) {
                             break;
                         }
+                        totalByteRead += sizeRead;
+                        int valueProgress=(int)(totalByteRead/fileSize*100);
+
+                        this.progressUpFile.setValue(valueProgress);
+                        System.out.println("progress : "+ valueProgress);
+
                         fSDataOutputStream.write(buffer);
                         System.out.println(totalByteRead);
                     }

@@ -11,6 +11,6 @@ package constants;
  */
 public final class ClientConstants {
     public static String HDFS_FREFIX_URL = "hdfs://";
-    public static int PORT_HDFS= 19000;
+    public static int PORT_HDFS= 9000;
     public static String ERR_CONN= "Connection error";
 }
